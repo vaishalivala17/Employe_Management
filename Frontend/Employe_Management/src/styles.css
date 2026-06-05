@@ -1,0 +1,309 @@
+/* Theme + layout */
+:root {
+    --bg: #0b1220;
+    --panel: rgba(255, 255, 255, 0.06);
+    --panel-2: rgba(255, 255, 255, 0.09);
+    --text: #e8eefc;
+    --muted: rgba(232, 238, 252, 0.7);
+    --primary: #6ea8fe;
+    --primary-2: #3b82f6;
+    --danger: #fb7185;
+    --border: rgba(255, 255, 255, 0.14);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --radius: 14px;
+    --radius-sm: 10px;
+    --gap: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(1200px 600px at 20% 0%, rgba(110, 168, 254, 0.25), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(59, 130, 246, 0.18), transparent 55%),
+        var(--bg);
+    color: var(--text);
+}
+
+/* App shell */
+.app header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.app header nav a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.app header nav a:hover {
+    border-color: var(--border);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.app main {
+    padding: 18px 16px 36px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.error {
+    margin: 12px 0;
+    color: var(--danger);
+    background: rgba(251, 113, 133, 0.12);
+    border: 1px solid rgba(251, 113, 133, 0.35);
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+
+.controls input {
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 12px;
+}
+
+.form {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    padding: 18px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.form label {
+    display: block;
+    margin: 0 auto 10px 25px;
+    font-weight: 600;
+    color: rgba(232, 238, 252, 0.95);
+}
+
+.form input {
+    display: block;
+    padding: 10px 12px;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    margin: 6px auto 0px;
+    outline: none;
+}
+
+
+.form input:focus {
+    border-color: rgba(110, 168, 254, 0.65);
+    box-shadow: 0 0 0 4px rgba(110, 168, 254, 0.18);
+}
+
+.form small {
+    color: #ffb4c2;
+    margin-top: 6px;
+    display: block;
+}
+
+.form button {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 150px;
+
+}
+
+.form div {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid rgba(110, 168, 254, 0.45);
+    background: linear-gradient(180deg, rgba(110, 168, 254, 0.95), rgba(59, 130, 246, 0.95));
+    color: #071022;
+    font-weight: 800;
+    padding: 10px 14px;
+    border-radius: 12px;
+    transition: transform 0.05s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 10px 18px rgba(59, 130, 246, 0.25);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: #9cc2ff;
+}
+
+.tableWrap {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+tr:hover td {
+    background: rgba(110, 168, 254, 0.08);
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    padding: 12px;
+}
+
+.pagination span {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .form {
+        padding: 14px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .app main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .form {
+        padding: 14px;
+    }
+
+    .form label {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .form input {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .form div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form button {
+        width: 100%;
+        max-width: none;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    th,
+    td {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .pagination {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
