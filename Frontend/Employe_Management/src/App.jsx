@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import EmployeeList from './pages/EmployeeList'
 import AddEditEmployee from './pages/AddEditEmployee'
 
