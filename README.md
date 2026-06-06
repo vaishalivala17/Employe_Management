@@ -1,4 +1,4 @@
-# Employee Management (MERN)
+# Employee Management
 
 A full-stack Employee Management app with:
 - **Backend**: Node.js + Express + MongoDB Atlas
