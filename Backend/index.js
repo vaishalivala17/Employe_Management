@@ -28,3 +28,5 @@ if (!MONGODB_URI) {
             app.listen(PORT, () => console.log(`Server running on port ${PORT} (DB connection failed)`));
         });
 }
+
+module.exports = app;
