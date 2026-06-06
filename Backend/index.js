@@ -1,3 +1,7 @@
+console.log("Starting application...");
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
+
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
